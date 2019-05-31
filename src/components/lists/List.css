@@ -1,0 +1,30 @@
+.ContainerList{
+    background: white;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 3px 10px -2px #134270; 
+    box-shadow: 5px 3px 10px -2px #134270;
+    width: 50%;
+    height: 80%;
+    margin-right: 0;
+}
+
+.TitleList{
+    font-size: 1.3em;
+    text-align: left;
+    padding: 15px 50px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.red{
+    background: #D32F2F;
+}
+
+.cardList{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 479px;
+    overflow: auto;
+}

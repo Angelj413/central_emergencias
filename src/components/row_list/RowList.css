@@ -1,0 +1,14 @@
+.ContainerRowList{
+    width: 100%;
+    border-bottom: 1px solid #757575;
+    padding: 10px;
+}
+
+.ContainerRowList .col {
+    text-align: left;
+    font-weight: 450;
+}
+
+.ContainerRowList span {
+    font-weight: 100;
+}

@@ -1,0 +1,24 @@
+#ContainerDashboard{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+#ContainerDashboard .row{
+    margin-right: 0; 
+    margin-left: 0; 
+}
+
+#RowDashboard{
+    height: 100%;
+}
+
+.BarLeft{
+    width: 20%;
+    height: 100%;
+}
+
+.BarRight{
+    width: 80%;
+    height: 100%;
+}
