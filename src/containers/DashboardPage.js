@@ -83,10 +83,19 @@ class DashboardPage extends Component {
                     </div>
                     <div className="BarRight">
                         <NavbarTop />
-                        <ContentList
-                            Title = {'Emergencias Entrantes'}
-                            Data = { emergencias_entrantes }
-                        />
+                        <Container 
+                            fluid={true}
+                            id="ContainerOfList" 
+                        >
+                            <ContentList
+                                Title = {'Emergencias Entrantes'}
+                                Data = { emergencias_entrantes }
+                            />
+                            <ContentList
+                                Title = {'Emergencias En Procesadas'}
+                                Data = { emergencias_entrantes }
+                            />
+                        </Container>
                     </div>
                 </Row>
             </Container>

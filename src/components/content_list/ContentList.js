@@ -33,22 +33,10 @@ class ContentList extends Component {
 
     render() {
         return (
-            <div className="ContainerContentList">
-                <div className="ContentList">
-                    <List
-                        Title = {this.state.Title}
-                        Data = {this.state.Data }
-                    />
-                    {/* <List
-                        Title = {'Emergencias Atendidas'}
-                        Data = { emergencias_entrantes }
-                    />
-                    <List
-                        Title = {'Emergencias Procesadas'}
-                        Data = { emergencias_entrantes }
-                    /> */}
-                </div>
-            </div>
+            <List
+                Title = {this.state.Title}
+                Data = {this.state.Data }
+            />
         );
     }
 }

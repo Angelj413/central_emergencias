@@ -22,3 +22,12 @@
     width: 80%;
     height: 100%;
 }
+
+.container-fluid{
+    padding: 0!important;
+}
+
+#ContainerOfList{
+    display: flex;
+    justify-content: space-around;
+}

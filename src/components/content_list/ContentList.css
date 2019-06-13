@@ -1,11 +1,4 @@
-.ContainerContentList{
-    height: 100%; /*#ebf0f6*/
-    background: #ebf0f6;
-}
-
 .ContentList{
-    width: 100%;
-    height: 100%;
     margin: 0;
     margin-right: 0;
     padding: 50px;

@@ -29,6 +29,8 @@ class List extends Component {
 
         if(this.props.Title === "Emergencias Entrantes"){
             background = "red"
+        }else if( this.props.Title === "Emergencias En Procesadas" ){
+            background = "green"
         }
 
         this.setState({ 
@@ -40,7 +42,6 @@ class List extends Component {
 
     render() {
         return (
-            <div className="ContainerList">
                 <div className="List">
                     <div className={`TitleList ${this.state.backTitle}`}>
                         {this.state.Title}
@@ -59,7 +60,6 @@ class List extends Component {
                         }
                     </div>
                 </div>
-            </div>
         );
     }
 }

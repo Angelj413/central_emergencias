@@ -1,7 +1,18 @@
 .ContainerRowList{
-    width: 100%;
-    border-bottom: 1px solid #757575;
+    width: 99%;
+    border: solid 1px transparent;
+    border-radius: 2%;
+    margin: 4px;
     padding: 10px;
+    cursor: pointer;
+    transition: transform .1s linear;
+    background: rgb(238, 238, 238);
+}
+
+.ContainerRowList:hover {
+    transform: scale(1.02);
+    background: rgb(228, 228, 228);
+    color: rgb(58, 56, 56);
 }
 
 .ContainerRowList .col {
