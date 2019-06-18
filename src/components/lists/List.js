@@ -58,6 +58,7 @@ class List extends Component {
                         {
                             Object.keys(this.state.Data).map( (index) => {
                                 counterid++
+                                console.log(this.state.Data[index])
                                 return <RowList 
                                     key = {counterid}
                                     User = {this.state.Data[index].id}

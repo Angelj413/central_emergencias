@@ -64,7 +64,7 @@ class RowList extends Component {
                     
                     <Row onClick={this.handleShow}>
                         <Col>
-                            usuario: <span>{this.state.User} </span> <br/>
+                            usuario: <span>{this.state.name} </span> <br/>
                             lugar: <span>Lat-{!!this.state.location && !!this.state.location._lat ? this.state.location._lat : null }, Long-{!!this.state.location && !!this.state.location._long ? this.state.location._long : null }</span> <br/>
                         </Col>
                         <Col>
@@ -81,7 +81,7 @@ class RowList extends Component {
                     <Modal.Body>
                         <Row onClick={this.handleShow}>
                         <Col>
-                            usuario: <span>{this.state.User} </span> <br/>
+                            usuario: <span>{this.state.name} </span> <br/>
                             lugar: <span>Lat-{!!this.state.location && !!this.state.location._lat ? this.state.location._lat : null }, Long-{!!this.state.location && !!this.state.location._long ? this.state.location._long : null } </span> <br/>
                         </Col>
                         <Col>
