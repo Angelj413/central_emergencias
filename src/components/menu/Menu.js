@@ -20,7 +20,7 @@ class Menu extends Component {
                 <div className="Menu">
                     <div className="LogoMenu">
                         <p>
-                        <span><i class="fas fa-first-aid"></i></span> Central de <span>Emergencias</span> 
+                        <span><i className="fas fa-first-aid"></i></span> Central de <span>Emergencias</span> 
                         </p>
                     </div>
                     <div className="links">
@@ -30,7 +30,7 @@ class Menu extends Component {
                             activeClassName="is-selected"
                             className =  "menuUser"
                         >
-                           <i class="fas fa-address-card"></i> Dashboard
+                           <i className="fas fa-address-card"></i> Dashboard
                         </NavLink>
                         <NavLink
                             exact
@@ -38,20 +38,20 @@ class Menu extends Component {
                             activeClassName="is-selected"
                             className =  "menuUser"
                         >
-                            <i class="fas fa-user-cog"></i>  Perfil
+                            <i className="fas fa-user-cog"></i>  Perfil
                         </NavLink>
                         <NavLink
                             exact
-                            to="/login"
+                            to="/"
                             activeClassName="is-selected"
                             className =  "menuUser"
                             onClick={this.logout.bind(this)}
                         >
-                            <i class="fas fa-sign-out-alt"></i>  Cerrar Sesión
+                            <i className="fas fa-sign-out-alt"></i>  Cerrar Sesión
                         </NavLink>
                     </div>
                     <div className="footerMenu">
-                        <p><i class="fas fa-user"></i> {localStorage.getItem('tokenUser')}</p>
+                        <p><i className="fas fa-user"></i> {localStorage.getItem('tokenUser')}</p>
                     </div>
                 </div>
             </div>

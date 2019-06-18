@@ -36,6 +36,7 @@ class ContentList extends Component {
             <List
                 Title = {this.state.Title}
                 Data = {this.state.Data }
+                handleEmergency = {this.props.handleEmergency}
             />
         );
     }

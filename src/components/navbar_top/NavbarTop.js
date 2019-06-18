@@ -15,10 +15,10 @@ class NavbarTop extends Component {
             <div className="ContainerNavbarTop">
                 <div className="NavbarTop">
                     <div>
-                        <i class="fas fa-bell"></i>
+                        <i className="fas fa-bell"></i>
                     </div>
                     <div>
-                        <i class="fas fa-envelope"></i>
+                        <i className="fas fa-envelope"></i>
                     </div>
                 </div>
             </div>

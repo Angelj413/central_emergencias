@@ -23,3 +23,7 @@
 .ContainerRowList span {
     font-weight: 100;
 }
+
+.Container-RowList{
+    width: 100%;
+}

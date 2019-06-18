@@ -10,7 +10,7 @@ class List extends Component {
 
         this.state = {
             Title : "",
-            Data : []
+            Data : {}
         }
     }
 
@@ -23,24 +23,32 @@ class List extends Component {
         }
     }
 
-    componentWillMount () {
-
+    proccesProps (propieties) {
         let background = "";
 
-        if(this.props.Title === "Emergencias Entrantes"){
+        if(propieties.Title === "Emergencias Entrantes"){
             background = "red"
-        }else if( this.props.Title === "Emergencias En Procesadas" ){
+        }else if( propieties.Title === "Emergencias Procesadas" ){
             background = "green"
         }
 
         this.setState({ 
-            Title: this.props.Title,
-            Data: this.props.Data,
+            Title: propieties.Title,
+            Data: propieties.Data,
             backTitle : background
         })
     }
 
+    componentWillMount () {
+        this.proccesProps(this.props)
+    }
+    
+    componentWillReceiveProps (props) {
+        this.proccesProps(props)
+    }
+
     render() {
+        let counterid = 0;
         return (
                 <div className="List">
                     <div className={`TitleList ${this.state.backTitle}`}>
@@ -48,13 +56,18 @@ class List extends Component {
                     </div>
                     <div className="cardList">
                         {
-                            this.state.Data.map( (index) => {
+                            Object.keys(this.state.Data).map( (index) => {
+                                counterid++
                                 return <RowList 
-                                    User = {index.User}
-                                    TypeEmergency = {index.TypeEmergency}
-                                    Status = {index.Status}
-                                    MsgEmergency = {index.MsgEmergency}
-                                    Tlf = {index.Tlf}
+                                    key = {counterid}
+                                    User = {this.state.Data[index].id}
+                                    id = {this.state.Data[index].id}
+                                    location = {this.state.Data[index].location}
+                                    date = {this.state.Data[index].date}
+                                    time = {this.state.Data[index].time}
+                                    name = {this.state.Data[index].name}
+                                    handleEmergency = {this.props.handleEmergency}
+                                    type = {this.props.Title}
                                 />
                             })
                         }

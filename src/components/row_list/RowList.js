@@ -10,21 +10,24 @@ class RowList extends Component {
 
         this.state = {
             User : "",
-            TypeEmergency : "",
-            Status : "",
-            MsgEmergency : "", 
-            Tlf : "",
-            show: false
+            location : "",
+            time : "",
+            location : "", 
+            date : "",
+            show: false,
+            name : "",
+            id: ""
         }
     }
 
     componentWillMount () {
         this.setState({ 
             User: this.props.User,
-            TypeEmergency: this.props.TypeEmergency,
-            Status: this.props.Status,
-            MsgEmergency: this.props.MsgEmergency,
-            Tlf: this.props.Tlf
+            id: this.props.id,
+            location: this.props.location,
+            time: this.props.time,
+            date: this.props.date,
+            name: this.props.name
         })
     }
 
@@ -32,10 +35,11 @@ class RowList extends Component {
         if (props) {
             this.setState({ 
                 User: props.User,
-                TypeEmergency: props.TypeEmergency,
-                Status: props.Status,
-                MsgEmergency: props.MsgEmergency,
-                Tlf: props.Tlf
+                id: props.id,
+                location: props.location,
+                time: props.time,
+                date: props.date,
+                name: props.name
             })
         }
     }
@@ -48,20 +52,24 @@ class RowList extends Component {
         this.setState({ show: false });
     }
 
+    handleEmergency = () => {
+        this.props.handleEmergency(this.state.id)
+        this.handleClose()
+    }
+
     render() {
         return (
-            <div>
+            <div className="Container-RowList">
                 <div className="ContainerRowList">
                     
                     <Row onClick={this.handleShow}>
                         <Col>
-                            Usuario: <span>{this.state.User} </span> <br/>
-                            Tipo de Emergencia: <span>{this.state.TypeEmergency}</span> <br/>
-                            Estatus: <span>{this.state.Status} </span>
+                            usuario: <span>{this.state.User} </span> <br/>
+                            lugar: <span>Lat-{!!this.state.location && !!this.state.location._lat ? this.state.location._lat : null }, Long-{!!this.state.location && !!this.state.location._long ? this.state.location._long : null }</span> <br/>
                         </Col>
                         <Col>
-                            Mensaje: <span>{this.state.MsgEmergency}</span> <br/>
-                            Tlf: <span>{this.state.Tlf}</span>
+                            fecha: <span>{this.state.date}</span> <br/>
+                            hora: <span>{this.state.time}</span>
                         </Col>
                     </Row>
                     
@@ -72,27 +80,31 @@ class RowList extends Component {
                     </Modal.Header>
                     <Modal.Body>
                         <Row onClick={this.handleShow}>
-                            <Col>
-                                Usuario: <span>{this.state.User} </span> <br/>
-                                Tipo de Emergencia: <span>{this.state.TypeEmergency}</span> <br/>
-                                Estatus: <span>{this.state.Status} </span>
-                            </Col>
-                            <Col>
-                                Mensaje: <span>{this.state.MsgEmergency}</span> <br/>
-                                Tlf: <span>{this.state.Tlf}</span>
-                            </Col>
+                        <Col>
+                            usuario: <span>{this.state.User} </span> <br/>
+                            lugar: <span>Lat-{!!this.state.location && !!this.state.location._lat ? this.state.location._lat : null }, Long-{!!this.state.location && !!this.state.location._long ? this.state.location._long : null } </span> <br/>
+                        </Col>
+                        <Col>
+                            fecha: <span>{this.state.date}</span> <br/>
+                            hora: <span>{this.state.time}</span>
+                        </Col>
                         </Row>
                     </Modal.Body>
                     <Modal.Footer>
                     <Button variant="secondary" onClick={this.handleClose}>
                         Cerrar
                     </Button>
-                    <Button variant="primary">
+                    {/* <Button variant="primary">
                         Enviar Correo
-                    </Button>
-                    <Button variant="success">
-                        Procesar
-                    </Button>
+                    </Button> */}
+                    {
+                        this.props.type === 'Emergencias Procesadas' ?
+                            null
+                        :
+                            <Button variant="success" onClick={this.handleEmergency}>
+                                Procesar
+                            </Button>
+                    }
                     </Modal.Footer>
                 </Modal>
             </div>
